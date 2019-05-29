@@ -1,0 +1,1 @@
+worker: python tagbot12.py
