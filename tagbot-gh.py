@@ -15,16 +15,16 @@ ME = "HogwartsTagOwl" # username
 
 SUB = "ravenclaw+RavenclawsBookClub+arithmancy"
 
-ArithmancySignupURL = "-----------------------------"
-AssignmentsSignupURL = "------------------------------"
-TagListSpreadsheetURL = "------------------------------"
+ArithmancySignupURL = "[ARITHMANCY_GOOGLE_FORM_URL]"
+AssignmentsSignupURL = "[RAVENCLAW_GOOGLE_FORM_URL]"
+TagListSpreadsheetURL = "[PUBLIC_SPREADSHEET_WITH_TAG_LISTS_URL]"
 ravenclaw_info_text2 = f'\n\n****\n\n*I\'m a bot. Do not reply here. | [About this bot](https://www.reddit.com/r/ravenclaw/wiki/meta/tagowl) | [Tag Lists]({TagListSpreadsheetURL}) | [Sign up / Opt-out]({AssignmentsSignupURL}) | [PM u\/eyl327](https://www.reddit.com/message/compose/?to=eyl327) if you have any questions.*'
 arithmancy_info_text2 = f'\n\n****\n\n*I\'m a bot. Do not reply here. | [Sign up / Opt-out]({ArithmancySignupURL}) | [PM u\/eyl327](https://www.reddit.com/message/compose/?to=eyl327) if you have any questions.*'
 ravenclaw_how_to_use = f'You have summoned {ME}.\n\nThe tag owl helps users in the tower notify large groups of users because Reddit does not send notifications when you mention more than 3 users at a time.\n\nTo use the tag owl, write a message in a comment or text submission and then add at the end, "Send by owl to" followed by a list all of the users you want to tag.\n\nIn a comment, you must have **at least 4** users mentioned to activate the owl. Reddit will send notifications if (and only if) there are 3 or fewer users in your comment.\n\nIn a text submission, however, you can send an owl to **1 or more** users because Reddit does **not** send notifications to users tagged in text submissions.\n\nExample usage:\n\n    I have an idea for the group assignment! Let me know what you think.    \n    Send by owl to u/username1, u/username2, u/username3, u/username4\n\nThis bot should not be used more than is necessary. Only tag people who have expressed interest in being tagged and don\'t use it too often. {ravenclaw_info_text2}'
 arithmancy_how_to_use = f'The Tag Owl is a bot created by u/eyl327 which is used by the moderators of r/Arithmancy to tag a large list of users since Reddit doesn\'t send notifications when more than 3 users are mentioned in a single comment. Each user signed up will receive a Private Message when the owl is summoned. Sign up for notifications using [this form]({ArithmancySignupURL}).'+arithmancy_info_text2
 
-r = praw.Reddit(client_id='-----------', client_secret="-------------------",
-                     password='----------', user_agent=f'{ME} Bot by u/eyl327',
+r = praw.Reddit(client_id='[CLIENT_ID_FROM_REDDIT]', client_secret="[CLIENT_SECRET_FROM_REDDIT]",
+                     password='[ACCOUNT PASSWORD]', user_agent=f'{ME} Bot by u/eyl327',
                      username=ME)
 
 def oauthAuthenticate():
