@@ -14,31 +14,25 @@ ME = "HogwartsTagOwl"
 TEST_SUB = "tagbottest"
 MAIN_SUBS = "ravenclaw+RavenclawsBookClub+Arithmancy+Dueling+tagbottest"
 
-SUBREDDIT = MAIN_SUBS # Make sure this is set to MAIN_SUBS to work in production
+SUBREDDIT = MAIN_SUBS  # Make sure this is set to MAIN_SUBS to work in production
 
-TagListSpreadsheetURL = "URL_REMOVED"
-ArithmancySignupURL = "URL_REMOVED"
-DuelingSignupURL = "URL_REMOVED"
-AssignmentsSignupURL = "URL_REMOVED"
+ArithmancySignupURL = "[ARITHMANCY_GOOGLE_FORM_URL]"
+AssignmentsSignupURL = "[RAVENCLAW_GOOGLE_FORM_URL]"
+DuelingSignupURL = "[DUELING_GOOGLE_FORM_URL]"
+TagListSpreadsheetURL = "[PUBLIC_SPREADSHEET_WITH_TAG_LISTS_URL]"
 arith_sign_up_promo = f"\n\nWant to receive notifications about new puzzles and announcements? Fill out [this form]({ArithmancySignupURL})!"
 dueling_sign_up_promo = f"\n\nWant to receive notifications when the home game opens? Fill out [this form]({DuelingSignupURL})!"
-ravenclaw_info_text2 = "\n\n****\n\n*I'm a bot. Do not reply here. | [About this bot](https://www.reddit.com/r/ravenclaw/wiki/meta/tagowl) | [Tag Lists](URL_REMOVED) | [Sign up / Opt-out](URL_REMOVED) | [PM u\/denvercoder01](https://www.reddit.com/message/compose/?to=denvercoder01) if you have any questions.*"
-arithmancy_info_text2 = "\n\n****\n\n*I'm a bot. Do not reply here. | [Sign up / Opt-out](URL_REMOVED) | [PM u\/denvercoder01](https://www.reddit.com/message/compose/?to=denvercoder01) if you have any questions.*"
-dueling_info_text2 = "\n\n****\n\n*I'm a bot. Do not reply here. | [Sign up / Opt-out](URL_REMOVED) | [PM u\/denvercoder01](https://www.reddit.com/message/compose/?to=denvercoder01) if you have any questions.*"
-ravenclaw_how_to_use = f'You have summoned {ME}.\n\nThe tag owl helps users in the tower notify large groups of users because Reddit does not send notifications when you mention more than 3 users at a time.\n\nTo use the tag owl, write a message in a comment or text submission and then add at the end, "Send by owl to" followed by a list all of the users you want to tag.\n\nIn a comment, you must have **at least 4** users mentioned to activate the owl. Reddit will send notifications if (and only if) there are 3 or fewer users in your comment.\n\nIn a text submission, however, you can send an owl to **1 or more** users because Reddit does **not** send notifications to users tagged in text submissions.\n\nExample usage:\n\n    I have an idea for the group assignment! Let me know what you think.    \n    Send by owl to u/username1, u/username2, u/username3, u/username4\n\nThis bot should not be used more than is necessary. Only tag people who have expressed interest in being tagged and don\'t use it too often. {ravenclaw_info_text2}'
-arithmancy_how_to_use = (
-    "The Tag Owl is a bot created by u/denvercoder01 which is used by the moderators of r/Arithmancy to tag a large list of users since Reddit doesn't send notifications when more than 3 users are mentioned in a single comment. Each user signed up will receive a Private Message when the owl is summoned. Sign up for notifications using [this form](https://docs.google.com/forms/d/e/1FAIpQLSexzdmni3rVswAxjrVGq7tYYEDYekVDqLy-QGy7btHOqluhwA/viewform)."
-    + arithmancy_info_text2
-)
-dueling_how_to_use = (
-    "The Tag Owl is a bot created by u/denvercoder01 which is used by the hosts of r/Dueling to tag a large list of users since Reddit doesn't send notifications when more than 3 users are mentioned in a single comment. Each user signed up will receive a Private Message when the owl is summoned. Sign up for notifications using [this form](https://docs.google.com/forms/d/e/1FAIpQLSemT5CybFt1k6CJc31RLH2PI3Q7xYaDYqskSHhJtnGsMiLhhg/viewform)."
-    + dueling_info_text2
-)
+ravenclaw_info_text2 = f"****\n\n*I'm a bot. Do not reply here. | [About this bot](https://www.reddit.com/r/ravenclaw/wiki/meta/tagowl) | [Tag Lists](https://docs.google.com/spreadsheets/d/1mPHcjWbCSjzgUhJG5wKQfyJzrSTYYfWELJ-KpI5B5Gw/edit?usp=sharing) | [Sign up / Opt-out]({AssignmentsSignupURL}) | [PM u\/denvercoder01](https://www.reddit.com/message/compose/?to=denvercoder01) if you have any questions.*"
+arithmancy_info_text2 = f"****\n\n*I'm a bot. Do not reply here. | [Sign up / Opt-out]({ArithmancySignupURL}) | [PM u\/denvercoder01](https://www.reddit.com/message/compose/?to=denvercoder01) if you have any questions.*"
+dueling_info_text2 = f"****\n\n*I'm a bot. Do not reply here. | [Sign up / Opt-out]({DuelingSignupURL}) | [PM u\/denvercoder01](https://www.reddit.com/message/compose/?to=denvercoder01) if you have any questions.*"
+ravenclaw_how_to_use = f'You have summoned {ME}.\n\nThe tag owl helps users in the tower notify large groups of users because Reddit does not send notifications when you mention more than 3 users at a time.\n\nTo use the tag owl, write a message in a comment or text submission and then add at the end, "Send by owl to" followed by a list all of the users you want to tag.\n\nIn a comment, you must have **at least 4** users mentioned to activate the owl. Reddit will send notifications if (and only if) there are 3 or fewer users in your comment.\n\nIn a text submission, however, you can send an owl to **1 or more** users because Reddit does **not** send notifications to users tagged in text submissions.\n\nExample usage:\n\n    I have an idea for the group assignment! Let me know what you think.    \n    Send by owl to u/username1, u/username2, u/username3, u/username4\n\nThis bot should not be used more than is necessary. Only tag people who have expressed interest in being tagged and don\'t use it too often.\n\n{ravenclaw_info_text2}'
+arithmancy_how_to_use = f"The Tag Owl is a bot created by u/denvercoder01 which is used by the moderators of r/Arithmancy to tag a large list of users since Reddit doesn't send notifications when more than 3 users are mentioned in a single comment. Each user signed up will receive a Private Message when the owl is summoned. Sign up for notifications using [this form]({ArithmancySignupURL}).\n\n{arithmancy_info_text2}"
+dueling_how_to_use = f"The Tag Owl is a bot created by u/denvercoder01 which is used by the hosts of r/Dueling to tag a large list of users since Reddit doesn't send notifications when more than 3 users are mentioned in a single comment. Each user signed up will receive a Private Message when the owl is summoned. Sign up for notifications using [this form]({DuelingSignupURL}).\n\n{dueling_info_text2}"
 
 r = praw.Reddit(
-    client_id="CLIENT_ID_REMOVED",
-    client_secret="CLIENT_SECRET_REMOVED",
-    password="PASSWORD_REMOVED",
+    client_id="[CLIENT_ID_FROM_REDDIT]",
+    client_secret="[CLIENT_SECRET_FROM_REDDIT]",
+    password="[PASSWORD_FROM_REDDIT]",
     user_agent=f"{ME} Bot by u/denvercoder01",
     username=ME,
 )
@@ -197,6 +191,7 @@ def send_pms(usernames, post, op, info_text1, quote_text, info_text2, dueling=Fa
                         f"Hi u/{curr_username},\n\n"
                         + info_text1
                         + quote_text
+                        + "\n\n"
                         + info_text2,
                     )
                 else:
@@ -205,6 +200,7 @@ def send_pms(usernames, post, op, info_text1, quote_text, info_text2, dueling=Fa
                         f"Hi u/{curr_username},\n\n"
                         + info_text1
                         + quote_text
+                        + "\n\n"
                         + info_text2,
                     )
                 print("\r", end="")
@@ -230,6 +226,7 @@ def send_pms(usernames, post, op, info_text1, quote_text, info_text2, dueling=Fa
                         f"Hi u/{curr_username},\n\n"
                         + info_text1
                         + quote_text
+                        + "\n\n"
                         + info_text2,
                     )
                     print("\r", end="")
@@ -277,7 +274,7 @@ def post_reply_comment(
         try:
             if usernames_length == 0:  # If message was sent to 0 people, PM me
                 post.reply(
-                    f"Your owl was sent to {usernames_length} users." + info_text2
+                    f"Your owl was sent to {usernames_length} users.\n\n" + info_text2
                 )
                 try:
                     r.redditor("denvercoder01").message(
@@ -289,6 +286,7 @@ def post_reply_comment(
                         + op
                         + "\n\n"
                         + "Sent to 0 users"
+                        + "\n\n"
                         + info_text2,
                     )
                 except Exception as err:
@@ -298,6 +296,7 @@ def post_reply_comment(
             elif errors_list == "Message was not sent to: ":  # no errors
                 post.reply(
                     f"Your owl has been sent successfully to {usernames_length} users."
+                    + "\n\n"
                     + info_text2
                 )
             else:  # If message was not sent to 1 or more users, PM me
@@ -307,6 +306,7 @@ def post_reply_comment(
                 post.reply(
                     f"Your owl has been sent successfully to {usernames_length} users.\n\n"
                     + errors_list
+                    + "\n\n"
                     + info_text2
                 )
                 try:
@@ -319,6 +319,7 @@ def post_reply_comment(
                         + op
                         + "\n\n"
                         + errors_list
+                        + "\n\n"
                         + info_text2,
                     )
                 except Exception as err:
@@ -371,7 +372,7 @@ def process_post(post, post_type):
             if f"{post.subreddit}" == "Arithmancy":
                 info_text2 = arithmancy_info_text2
                 in_progress_comment = post.reply(
-                    f"Your message will be sent by owl shortly. If this message is not automatically deleted within a few minutes, notify u/denvercoder01. {info_text2}"
+                    f"Your message will be sent by owl shortly. If this message is not automatically deleted within a few minutes, notify u/denvercoder01.\n\n{info_text2}"
                 )
             while usernames_listed == False:
                 try:
@@ -402,7 +403,7 @@ def process_post(post, post_type):
                                 if curr_user_status == "Account exists":
                                     r.redditor(curr_username).message(
                                         f"There's a new post in r/{post.subreddit}",
-                                        f"Hi u/{curr_username},\n\nThere's a new post in r/{post.subreddit}:\n\n>[**{str(post.title)}**]({url_link}) posted by u/{post.author} {info_text2}",
+                                        f"Hi u/{curr_username},\n\nThere's a new post in r/{post.subreddit}:\n\n>[**{str(post.title)}**]({url_link}) posted by u/{post.author}\n\n{info_text2}",
                                     )
                                     print("\r", end="")
                                     print(
@@ -436,7 +437,7 @@ def process_post(post, post_type):
                                     try:
                                         r.redditor(curr_username).message(
                                             f"There's a new post in r/{post.subreddit}",
-                                            f"Hi u/{curr_username},\n\nThere's a new post in r/{post.subreddit}:\n\n>[**{str(post.title)}**]({url_link}) posted by u/{post.author} {info_text2}",
+                                            f"Hi u/{curr_username},\n\nThere's a new post in r/{post.subreddit}:\n\n>[**{str(post.title)}**]({url_link}) posted by u/{post.author}\n\n{info_text2}",
                                         )
                                         print("\r", end="")
                                         print(
@@ -481,6 +482,7 @@ def process_post(post, post_type):
                                 + op
                                 + "\n\n"
                                 + errors_list
+                                + "\n\n"
                                 + info_text2,
                             )
                         print("")
@@ -498,6 +500,7 @@ def process_post(post, post_type):
                                     if usernames_length == 0:
                                         post.reply(
                                             f"Your message was sent to {usernames_length} users."
+                                            + "\n\n"
                                             + info_text2
                                         )
                                         r.redditor("denvercoder01").message(
@@ -509,6 +512,7 @@ def process_post(post, post_type):
                                             + op
                                             + "\n\n"
                                             + "Sent to 0 users"
+                                            + "\n\n"
                                             + info_text2,
                                         )
                                     elif (
@@ -517,6 +521,7 @@ def process_post(post, post_type):
                                         post.reply(
                                             f"Your message has been sent successfully by owl to {usernames_length} users.\n\n"
                                             + arith_sign_up_promo
+                                            + "\n\n"
                                             + info_text2
                                         )
                                     else:  # If message was not sent to 1 or more users, PM me
@@ -524,6 +529,7 @@ def process_post(post, post_type):
                                         post.reply(
                                             f"Your owl has been sent successfully to {usernames_length} users.\n\n"
                                             + errors_list
+                                            + "\n\n"
                                             + info_text2
                                         )
                                     posted_comment = True
@@ -729,6 +735,7 @@ def process_post(post, post_type):
                                     + 'Does not have username immediately after "Send by owl" request ('
                                     + ctext_start
                                     + "...)"
+                                    + "\n\n"
                                     + info_text2,
                                 )
                             except Exception as err:
@@ -743,7 +750,7 @@ def process_post(post, post_type):
                 if op != ME:  # If not replying to self
                     if has_tags:  # if has more than ~3~ 0 users tagged
                         in_progress_comment = post.reply(
-                            f"Your owl will be sent shortly. If this message is not automatically deleted within a few minutes, notify u/denvercoder01. {info_text2}"
+                            f"Your owl will be sent shortly. If this message is not automatically deleted within a few minutes, notify u/denvercoder01.\n\n{info_text2}"
                         )
 
                         usernames = get_usernames(called_list, ctext)
@@ -892,7 +899,7 @@ def process_post(post, post_type):
                         ):
                             quote_text = f'Click on [**this link**]({quiz_url}) to start the quiz. The theme this week is **"{quiz_theme}!"** The quiz will be open until **{end_date}**'
                             in_progress_comment = post.reply(
-                                f"Your owl will be sent shortly. If this message is not automatically deleted within a few minutes, notify u/denvercoder01. {dueling_info_text2}"
+                                f"Your owl will be sent shortly. If this message is not automatically deleted within a few minutes, notify u/denvercoder01.\n\n{dueling_info_text2}"
                             )
                             usernames = get_usernames(called_list, "")
                             pms = send_pms(
@@ -919,7 +926,7 @@ def process_post(post, post_type):
                                 post_type,
                                 url_link,
                                 op,
-                                dueling_sign_up_promo + dueling_info_text2,
+                                dueling_sign_up_promo + "\n\n" + dueling_info_text2,
                             )
                             print(
                                 f"Posted reply to {post.id} by {op} in {str(post.subreddit)}."
