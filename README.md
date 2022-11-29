@@ -1,15 +1,17 @@
-# tag-owl
+# HogwartsTagOwl
 
-Reddit bot to tag long lists of users
+Reddit bot to tag long lists of users.
 
-Things such as urls, client info, passwords were taken out
+This bot sends notifications to users when:
 
-Lines 57-147 in the python is just to send notifications to people who want to be notified of every post in r/ravenclaw regardless of whether "send by owl" was included
-
-Lines 151-375 is for when someone writes "send by owl" in a post or comment
+* A new post is created in a subreddit (for /r/ravenclaw, /r/RavenclawsBookClub, /r/Arithmancy)
+* Someone writes "send by owl" in a comment (eg. "Send by owl to Assignments List", "Send by owl to u/example1, u/example2")
+* A comment is posted mentioning a link to a Home Game (for r/Dueling)
 
 Info on getting Reddit client id, client secret for bot account: https://progur.com/2016/09/how-to-create-reddit-bot-using-praw4.html
 
-Steps for setting up Google Sheets API, creds.json file: https://erikrood.com/Posts/py_gsheets.html
+Steps for setting up Google Sheets API and `creds.json` with Google credentials: https://erikrood.com/Posts/py_gsheets.html
 
-I'm currently running the script using heroku - https://dashboard.heroku.com/apps
+I'm currently running the script using Heroku - https://dashboard.heroku.com/apps
+
+I know the code is a mess, this is an old project that I'm not actively working on.
