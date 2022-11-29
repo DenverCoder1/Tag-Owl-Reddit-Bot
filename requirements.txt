@@ -1,4 +1,4 @@
-gspread==3.7.0
+gspread==5.7.1
 praw==7.6.1
 prawcore==2.3.0
 google-api-python-client==2.52.0
