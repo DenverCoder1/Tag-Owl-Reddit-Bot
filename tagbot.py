@@ -69,14 +69,12 @@ def oauth_authenticate():
         "https://spreadsheets.google.com/feeds",
         "https://www.googleapis.com/auth/drive",
     ]
-    credentials = ServiceAccountCredentials.from_json_keyfile_name(
-        "creds.json", scope
-    )  # get email and key from creds
-    file = gspread.authorize(credentials)  # authenticate with Google
+    # get email and key from creds
+    credentials = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
+    creds_file = gspread.authorize(credentials)  # authenticate with Google
     global sheet
-    sheet = file.open(
-        "Sign Up for Assignment Reminders and Tag Lists (Responses)"
-    ).sheet1  # open sheet
+    # open sheet
+    sheet = creds_file.open("Sign Up for Assignment Reminders and Tag Lists (Responses)").sheet1
 
 
 def get_date(post):
@@ -141,7 +139,7 @@ def get_usernames(called_list, ctext):
             elif called_list == "the **Test List**":
                 all_cells = sheet.range(TagList.test.value)
             else:
-                ctext_no_links = re.sub(r"https?:\/\/[^\)\s\r\n]+", "", ctext, flags=re.MULTILINE)
+                ctext_no_links = re.sub(r"https?:\/\/[^\)\s]+", "", ctext, flags=re.MULTILINE)
                 newctext = (
                     ctext_no_links.replace(",u/", " u/")
                     .replace("/u/", " u/")
@@ -164,7 +162,7 @@ def get_usernames(called_list, ctext):
                 usernames = [word for word in newctext.split() if word.startswith("u/")]
                 all_cells = "none"
                 usernames_listed = True
-            if called_list != "you":
+            if called_list != "you" and all_cells != "none":
                 for cell in all_cells:
                     if cell.value != "":
                         usernames.append(cell.value)
