@@ -4,3 +4,4 @@ pipenv==2020.11.15
 praw==7.2.0
 prawcore==2.0.0
 pyOpenSSL==20.0.1
+python-dotenv==0.21.0
