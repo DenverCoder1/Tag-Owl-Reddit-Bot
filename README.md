@@ -1,4 +1,4 @@
-# HogwartsTagOwl
+# Tag-Owl-Reddit-Bot
 
 Reddit bot to tag long lists of users.
 
@@ -14,4 +14,5 @@ Steps for setting up Google Sheets API and `creds.json` with Google credentials:
 
 I'm currently running the script using Heroku - https://dashboard.heroku.com/apps
 
-I know the code is a mess, this is an old project that I'm not actively working on.
+> **Note**
+> I know the code is a mess, this is an old project that I'm not actively working on.
