@@ -9,7 +9,7 @@ import gspread
 import praw
 import praw.exceptions
 from dotenv import load_dotenv
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2 import service_account
 from prawcore.exceptions import PrawcoreException
 
 load_dotenv()
@@ -65,17 +65,31 @@ r = praw.Reddit(
 
 
 def oauth_authenticate():
-    scope = [
+    # Google client configuration
+    google_config = {
+        "type": "service_account",
+        "project_id": os.getenv("GOOGLE_PROJECT_ID", ""),
+        "private_key_id": os.getenv("GOOGLE_PRIVATE_KEY_ID", ""),
+        "private_key": os.getenv("GOOGLE_PRIVATE_KEY", "").replace("\\n", "\n"),
+        "client_email": os.getenv("GOOGLE_CLIENT_EMAIL", ""),
+        "client_id": os.getenv("GOOGLE_CLIENT_ID", ""),
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": os.getenv("GOOGLE_CLIENT_X509_CERT_URL"),
+    }
+    scopes = [
         "https://spreadsheets.google.com/feeds",
         "https://www.googleapis.com/auth/drive",
     ]
     # get email and key from creds
-    creds_path = os.path.join(os.path.dirname(__file__), "creds.json")
-    credentials = ServiceAccountCredentials.from_json_keyfile_name(creds_path, scope)
-    creds_file = gspread.authorize(credentials)  # authenticate with Google
+    credentials = service_account.Credentials.from_service_account_info(
+        google_config, scopes=scopes
+    )
+    sheets = gspread.authorize(credentials)  # authenticate with Google
     global sheet
     # open sheet
-    sheet = creds_file.open("Sign Up for Assignment Reminders and Tag Lists (Responses)").sheet1
+    sheet = sheets.open("Sign Up for Assignment Reminders and Tag Lists (Responses)").sheet1
 
 
 def get_date(post):
