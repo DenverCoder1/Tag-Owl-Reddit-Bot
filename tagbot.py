@@ -70,7 +70,8 @@ def oauth_authenticate():
         "https://www.googleapis.com/auth/drive",
     ]
     # get email and key from creds
-    credentials = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
+    creds_path = os.path.join(os.path.dirname(__file__), "creds.json")
+    credentials = ServiceAccountCredentials.from_json_keyfile_name(creds_path, scope)
     creds_file = gspread.authorize(credentials)  # authenticate with Google
     global sheet
     # open sheet
