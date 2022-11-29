@@ -1,1 +1,1 @@
-worker: python tagbot12.py
+worker: python tagbot.py
