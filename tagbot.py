@@ -16,7 +16,7 @@ load_dotenv()
 
 ME = os.getenv("REDDIT_USERNAME")
 AUTHOR = "Eyl327"
-CONTACT = "DenverCoder1#0327 on Discord or r/ravenclaw modmail"
+CONTACT = "denvercoder1 on Discord or r/ravenclaw modmail"
 INBOX = os.getenv("REDDIT_INBOX_USERNAME")
 
 TEST_SUB = "tagbottest"
@@ -1035,3 +1035,4 @@ while True:
             traceback.print_tb(err.__traceback__)
             time.sleep(15)
             restart = True
+
